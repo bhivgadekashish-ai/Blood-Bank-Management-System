@@ -1,0 +1,102 @@
+
+# Test Cases - Blood Bank Management System
+
+**Project Title:** Blood Bank Management System  
+**PS Number:** 78  
+**Programming Language:** Python 3
+
+## Test Case 1: Normal Input - Add Donor
+
+### Input
+- Menu: Add donor
+- Name: Anil Verma
+- Blood group: B+
+- Units: 1
+
+### Expected Output
+```text
+Donor saved to donors.txt. Stock of B+ is now 6 units.
+```
+
+### Purpose
+To verify that a donor can be added successfully and blood stock is updated.
+
+---
+
+## Test Case 2: Boundary / Minimum Input - Issue Blood
+
+### Input
+- Menu: Issue blood
+- Blood group: AB+
+- Units: 2
+
+### Expected Output
+```text
+2 unit(s) of AB+ issued. Stock of AB+ is now 0 units.
+```
+
+### Purpose
+To verify that blood can be issued when the requested quantity equals the available stock.
+
+---
+
+## Test Case 3: Invalid Input
+
+### Case A: Insufficient Stock
+
+#### Input
+- Menu: Issue blood
+- Blood group: A-
+- Units: 3
+
+#### Expected Output
+```text
+Insufficient stock: only 0 unit(s) of A- available.
+```
+
+### Case B: Invalid Blood Group
+
+#### Input
+- Menu: Add donor
+- Name: Rina Das
+- Blood group: C+
+- Units: 1
+
+#### Expected Output
+```text
+Invalid blood group. Valid groups: A+, A-, B+, B-, AB+, AB-, O+, O-.
+```
+
+### Purpose
+To verify that the system rejects unavailable blood requests and invalid blood groups.
+
+---
+
+## Test Case 4: Search Donors
+
+### Initial donors.txt Data
+```text
+Meena Joshi|O+|1
+Suresh Rao|O+|2
+```
+
+### Input
+- Menu: Search donors
+- Blood group: O+
+
+### Expected Output
+```text
+Donors with blood group O+:
+1. Meena Joshi - 1 unit(s)
+2. Suresh Rao - 2 unit(s)
+Total donors found: 2
+```
+
+### Purpose
+To verify that the system finds and displays donors matching the selected blood group.
+
+---
+
+## Conclusion
+
+The four test cases check normal operation, minimum stock handling, invalid inputs, and donor searching. The program should be tested against these expected results before submission.
